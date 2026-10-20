@@ -1,0 +1,6 @@
+Windows/node_modules/
+Windows/dist/
+Windows/dist-*/
+Windows/private-assets/
+Windows/test-output/
+Windows/.test-user-data/

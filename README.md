@@ -1,5 +1,7 @@
 # Codex Wallpaper · Codex 壁纸
 
+**Windows 版**：新增独立窗口、系统托盘、壁纸库和分区域玻璃效果调节。源码、构建和使用说明见 [Windows/README.md](Windows/README.md)。macOS 版保持原有实现。
+
 为 macOS 上的 Codex 客户端添加本地图片壁纸。支持 Intel 与 Apple Silicon（M 系列）原生运行，一个 Universal 安装包覆盖两种架构。
 
 独立、非官方项目，与 OpenAI 或 ReTheme 无隶属关系。

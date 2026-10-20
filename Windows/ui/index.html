@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self'; frame-src 'self'; connect-src 'none'">
+<title>Codex 外观</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<header><div class="brand"><span class="brand-symbol">◈</span><div><b>Codex 外观</b><small>WALLPAPER & GLASS</small></div></div><span class="edition">WINDOWS · 本地个性化</span><button id="restore" class="quiet">恢复原样</button></header>
+<main>
+ <section class="stage">
+  <div class="stage-heading"><div><span class="eyebrow">你的工作空间</span><h1 id="wallpaper-name">黄泉 · 虚无之镜</h1><p>让喜欢的画面，透过每一层玻璃。</p></div><div class="preview-tools"><button id="refresh-preview" class="quiet" hidden>刷新实景</button><span id="preview-label" class="pill">布局示意</span></div></div>
+  <div class="preview-wrap" id="dropzone"><iframe id="preview" title="壁纸与玻璃效果预览" sandbox="allow-same-origin" src="preview.html"></iframe><img id="actual-preview" alt="当前 Codex 窗口实景" hidden></div>
+  <div class="preview-foot"><span id="preview-note">未连接时为布局示意；连接后显示客户端实景</span><label class="switch"><input type="checkbox" id="live" checked>实时应用</label></div>
+  <div class="library-heading"><h2>壁纸库 <span id="library-count"></span></h2><div><button id="clear" class="quiet">仅用底色</button><button id="import">＋ 导入图片</button></div></div>
+  <div class="gallery" id="gallery"></div>
+  <div class="library-note">拖入 PNG、JPEG 或 WebP · 原图不变 · 图片保存在本机</div>
+ </section>
+ <aside>
+  <div class="tabs" role="tablist"><button class="active" data-tab="wallpaper" role="tab">壁纸</button><button data-tab="advanced" role="tab">高级设置</button></div>
+  <div class="controls">
+   <div id="wallpaper-panel">
+    <div class="section-label">配色氛围</div><div class="palettes" id="palettes"></div>
+    <div class="section-label spaced">画面调整</div>
+    <div id="wallpaper-controls"></div>
+    <p class="hint">壁纸模糊只作用于图片；玻璃的模糊在高级设置中单独调整。</p>
+   </div>
+   <div id="advanced-panel" hidden>
+    <div class="section-title"><div><div class="section-label">玻璃质感</div><p class="hint">高光、透光与柔和层次</p></div><label class="switch"><input type="checkbox" id="glass">开启</label></div>
+    <div class="section-label spaced">界面颜色</div><div id="colors" class="colors"></div>
+    <div class="section-label spaced">区域透明度与模糊</div><p class="hint">底色越低越透明；不会降低文字透明度。</p>
+    <div id="regions"></div>
+    <details open><summary>边缘与文字</summary><div id="details-controls"></div></details>
+    <button id="reset" class="wide quiet">恢复黄泉默认参数</button>
+   </div>
+  </div>
+ </aside>
+</main>
+<footer><div class="connection"><span id="status-dot"></span><div><b id="status">准备好你的黄泉工作空间。</b><small id="version">关闭窗口后继续在托盘运行</small></div></div><button id="apply">应用更改</button><button id="connect" class="primary">连接 Codex</button></footer>
+<div id="toast" role="alert" hidden></div>
+<script src="app.js"></script>
+</body></html>
