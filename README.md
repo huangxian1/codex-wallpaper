@@ -5,6 +5,10 @@
 - **[下载单文件便携版 EXE](https://github.com/huangxian1/codex-wallpaper/releases/download/windows-v0.1.2/CodexWallpaper-0.1.2-Windows-x64-Portable.exe)** · 双击即可运行，免安装。
 - **[下载安装版 EXE](https://github.com/huangxian1/codex-wallpaper/releases/download/windows-v0.1.2/CodexWallpaper-0.1.2-Windows-x64-Setup.exe)** · 安装后可从开始菜单打开。
 
+## macOS 下载
+
+**[下载 macOS 1.3.1 应用（ZIP）](https://raw.githubusercontent.com/huangxian1/codex-wallpaper/main/Codex-Wallpaper-App.zip)** · 适用于 macOS 14 及以上。此包为 Intel x86_64 构建，Apple Silicon 机型需通过 Rosetta 2 运行。
+
 **Windows 版**：新增独立窗口、系统托盘、壁纸库和分区域玻璃效果调节。源码、构建和使用说明见 [Windows/README.md](Windows/README.md)。macOS 版保持原有实现。
 
 为 macOS 上的 Codex 客户端添加本地图片壁纸。支持 Intel 与 Apple Silicon（M 系列）原生运行，一个 Universal 安装包覆盖两种架构。
@@ -39,7 +43,7 @@
 
 ## 安装
 
-从本仓库的 GitHub Releases 下载 `CodexWallpaper-1.4.0-macOS-universal.dmg`，打开后将 **Codex 壁纸.app** 拖入 **Applications**。也可下载同名 ZIP 解压安装。
+从上方 macOS 下载区获取 ZIP，解压后将 **Codex 壁纸.app** 拖入「应用程序」文件夹。如需 1.4.0 Universal 版，可按下方「从源码构建」步骤生成。
 
 当前公开构建使用 ad-hoc 签名，**没有 Apple Developer ID 公证**。从互联网下载后，macOS 可能拦截首次打开。确认文件来源与 SHA-256 后，可按系统提供的“系统设置 → 隐私与安全性 → 仍要打开”流程操作；也可以自行编译。项目不要求关闭 Gatekeeper 或 SIP。
 
