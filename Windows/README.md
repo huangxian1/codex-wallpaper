@@ -1,5 +1,10 @@
 # Codex 外观 · Windows
 
+## Windows 下载（x64）
+
+- **[下载单文件便携版 EXE](https://github.com/huangxian1/codex-wallpaper/releases/download/windows-v0.1.2/CodexWallpaper-0.1.2-Windows-x64-Portable.exe)** · 双击即可运行，免安装。
+- **[下载安装版 EXE](https://github.com/huangxian1/codex-wallpaper/releases/download/windows-v0.1.2/CodexWallpaper-0.1.2-Windows-x64-Setup.exe)** · 安装后可从开始菜单打开。
+
 本地壁纸与玻璃样式管理器。保留 macOS 版的配色、图片导入、缩放、位置、可见度与模糊控制，增加分区域玻璃效果和 Windows 托盘。无需编辑 CSS。
 
 ## 使用
@@ -53,10 +58,10 @@ Windows 界面使用 Electron，配色与主题机制参考同仓库 macOS 版�
 
 ## Windows 发布包
 
-安装 Inno Setup 6 并运行 `npm ci` 后，在本目录执行以下命令。若 ISCC.exe 已加入 PATH，可省略 `-Compiler` 参数。
+安装 Inno Setup 6 和 NSIS 3 并运行 `npm ci` 后，在本目录执行以下命令。两个编译器均已加入 PATH 时，可直接运行 `.\release.ps1`。
 
 ```powershell
-.\release.ps1 -Compiler "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe"
+.\release.ps1 -Compiler "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe" -NsisCompiler "${env:ProgramFiles(x86)}\NSIS\makensis.exe"
 ```
 
-脚本在 `dist-public-<版本>` 下生成当前用户安装程序和 x64 便携 ZIP，并显示两份文件的 SHA-256。便携版需完整解压后运行。
+脚本在 `dist-public-<版本>` 下生成当前用户安装程序和 x64 单文件便携 EXE，并显示两个程序的 SHA-256。

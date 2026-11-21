@@ -1,5 +1,10 @@
 # Codex Wallpaper · Codex 壁纸
 
+## Windows 下载（x64）
+
+- **[下载单文件便携版 EXE](https://github.com/huangxian1/codex-wallpaper/releases/download/windows-v0.1.2/CodexWallpaper-0.1.2-Windows-x64-Portable.exe)** · 双击即可运行，免安装。
+- **[下载安装版 EXE](https://github.com/huangxian1/codex-wallpaper/releases/download/windows-v0.1.2/CodexWallpaper-0.1.2-Windows-x64-Setup.exe)** · 安装后可从开始菜单打开。
+
 **Windows 版**：新增独立窗口、系统托盘、壁纸库和分区域玻璃效果调节。源码、构建和使用说明见 [Windows/README.md](Windows/README.md)。macOS 版保持原有实现。
 
 为 macOS 上的 Codex 客户端添加本地图片壁纸。支持 Intel 与 Apple Silicon（M 系列）原生运行，一个 Universal 安装包覆盖两种架构。
