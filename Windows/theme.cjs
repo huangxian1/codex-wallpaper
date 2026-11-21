@@ -24,18 +24,20 @@ ${scope},${scope} body{background:${s.base} !important;color:${s.text} !importan
 ${scope} #root{background:transparent !important;}
 ${scope} [data-app-shell-frame]{isolation:isolate;background:${s.base} !important;--app-shell-titlebar-top-inset:0px !important;}
 ${scope} [data-app-shell-frame]::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:${image?`url("${image}")`:'none'};background-repeat:no-repeat;background-position:calc(50% + ${s.offsetX}vw) ${s.positionY}%;opacity:${s.strength/100};filter:blur(${s.wallpaperBlur}px);}
-${scope} :is([data-app-shell-main-surface],[class*="_MainContentSurface_"],[class*="_PageSurface_"],[class*="_MainContentFrame_"],.thread-scroll-container,aside.app-shell-left-panel){background:transparent !important;}
+${scope} :is([data-app-shell-main-surface],[data-app-shell-surface-backing],[class*="_MainContentSurface_"],[class*="_PageSurface_"],[class*="_MainContentFrame_"],.thread-scroll-container,aside.app-shell-left-panel){background:transparent !important;}
 ${scope} :is([class*="_FullHeightPageSurfaceLayout_"],[class*="_WorkspaceContent_"])::before{background:transparent !important;}
 ${scope} aside.app-shell-left-panel{margin-block-start:0 !important;}
 ${scope} :is([class*="_ApplicationMenuTopBar_"],header[data-app-shell-titlebar]){${glass(s.menuOpacity,s.menuBlur)}color:${s.text} !important;}
 ${scope} [data-app-navigation-rail]{${glass(s.railOpacity,s.railBlur)}}
-${scope} :is([class*="_ConversationSidebar_"],aside.app-shell-left-panel nav[class*="_Navigation_"]){${glass(s.sidebarOpacity,s.sidebarBlur)}color:${s.text} !important;}
-${scope} :is([data-app-navigation-rail],[class*="_ConversationSidebar_"]) :is(button,a):hover{background:${rgba(s.accent,.14)} !important;}
-${scope} :is([data-app-navigation-rail],[class*="_ConversationSidebar_"]) :is([aria-current="page"],[aria-selected="true"],[data-active="true"]){background:${rgba(s.accent,.22)} !important;box-shadow:inset 2px 0 ${s.accent};}
+${scope} :is([class*="_ConversationSidebar_"],[class*="ConversationSidebar-"],aside.app-shell-left-panel nav[class*="_Navigation_"]){${glass(s.sidebarOpacity,s.sidebarBlur)}color:${s.text} !important;}
+${scope} :is([data-app-navigation-rail],[class*="_ConversationSidebar_"],[class*="ConversationSidebar-"]) :is(button,a):hover{background:${rgba(s.accent,.14)} !important;}
+${scope} :is([data-app-navigation-rail],[class*="_ConversationSidebar_"],[class*="ConversationSidebar-"]) :is([aria-current="page"],[aria-selected="true"],[data-active="true"]){background:${rgba(s.accent,.22)} !important;box-shadow:inset 2px 0 ${s.accent};}
 ${scope} [data-thread-find-target="conversation"]{background:transparent !important;color:${s.text} !important;--color-text:${s.text} !important;--color-text-secondary:${s.muted} !important;text-shadow:0 1px 2px ${rgba('#000000',s.textShadow/100)},0 0 4px ${rgba('#000000',s.textShadow/180)};}
 ${scope} [data-local-conversation-final-assistant]{color:${s.text} !important;}
 /* Native thread footer paints a separate opaque backing beneath the composer.
    Clear only this decorative backing, not buttons, menus or interactive rows. */
+${scope} .thread-scroll-container > :has(> [data-thread-scroll-footer])::before,
+${scope} .thread-scroll-container > :has(> [data-thread-scroll-footer])::after,
 ${scope} [data-thread-scroll-footer] [class*="_background_"][class*="_surface_"],
 ${scope} [data-thread-scroll-footer] [class*="_background_"][class*="_surface_"]::before,
 ${scope} [data-thread-scroll-footer] [class*="_background_"][class*="_surface_"]::after{background:transparent !important;box-shadow:none !important;}

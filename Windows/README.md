@@ -50,3 +50,13 @@ node tests/integration.cjs
 ```
 
 Windows 界面使用 Electron，配色与主题机制参考同仓库 macOS 版。滤镜是 CSS 玻璃质感，不包含物理折射引擎。界面示意预览和实际 Codex 布局比例不同；客户端更新后需重新验证选择器。
+
+## Windows 发布包
+
+安装 Inno Setup 6 并运行 `npm ci` 后，在本目录执行以下命令。若 ISCC.exe 已加入 PATH，可省略 `-Compiler` 参数。
+
+```powershell
+.\release.ps1 -Compiler "$env:LOCALAPPDATA\Programs\Inno Setup 6\ISCC.exe"
+```
+
+脚本在 `dist-public-<版本>` 下生成当前用户安装程序和 x64 便携 ZIP，并显示两份文件的 SHA-256。便携版需完整解压后运行。
